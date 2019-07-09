@@ -183,7 +183,7 @@ a{
     list-style: none;
     display: block;
     height: auto;
-    width: 720px;
+    width: 960px;
     margin: 30px auto;
     background-color: white;
     border-radius: 3px;
@@ -497,15 +497,15 @@ a{
 }
 
 .markdown-body{
-  max-width: 800px;
-  height: auto;
-  margin: -155px auto 50px auto;
-  background-color: white;
-  padding: 40px 30px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  border: 1px solid #e7eaf1;
-  border-radius: 3px;
+	max-width: 960px;
+    height: auto;
+    margin: -155px auto 50px auto;
+    background-color: white;
+    padding: 25px 23px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 1px solid #e7eaf1;
+    border-radius: 3px;
 }
 .markdown-body .highlight pre{
   padding: 20px;

@@ -1,109 +1,70 @@
----
-layout: default
-disqus: false
-archive: false
-post_class: post-template
----
+<!-- 博文的布局-Layout -->
+<!DOCTYPE html>
+<html>
+<head>
+<!-- 引入head标签 -->
+{% include head.html %}
+{% include androidColor.html %}
+</head>
+<body>
 
-<!-- Begin Article
-================================================== -->
-<div class="container">
-	<div class="row">
+<!-- 顶部锚点 -->
+<a id="htmlup" name="htmlup"></a>
+<!-- 引入博文顶部选项 -->
+{% include post-header.html %}
+<!-- 引入移动下拉选项 -->
+{% include boot.html %}
+<!-- 引入博文顶部样式 -->
+{% include post-title.html %}
+<div class="markdown-body fadeInUp animated">
 
-		<!-- Post Share -->
-		<div class="col-md-2 pl-0">            
-           {% include share.html %}  
-		</div>
-		
+  {% if page.subtitle %}
+    {% if page.color.size==0 or page.color==nil %}
+      <div class="postpage-subtitle" style="border-left: 8px solid #9A85FF; border-right: 8px solid #9A85FF;">
+        {{ page.subtitle }}
+      </div>
+    {% else %}
+      <div class="postpage-subtitle" style="border-left: 8px solid {{ page.color }}; border-right: 8px solid {{ page.color }}">
+        {{ page.subtitle }}
+      </div>
+    {% endif %}
+  {% endif %}
 
-		<!-- Post -->        
-        {% assign author = site.authors[page.author] %}
-        
-		<div class="col-md-9 flex-first flex-md-unordered">
-			<div class="mainheading">
-
-                <!-- Author Box -->
-                {% if page.author %}				
-				<div class="row post-top-meta">
-					<div class="col-md-2">
-						<img class="author-thumb" src="https://www.gravatar.com/avatar/{{ author.gravatar }}?s=250&d=mm&r=x" alt="{{ author.display_name }}">
-					</div>
-					<div class="col-md-10">
-						<a target="_blank" class="link-dark" href="{{ author.web }}">{{ author.display_name }}</a><a target="_blank" href="{{ author.twitter }}" class="btn follow">Follow</a>
-						<span class="author-description">{{ author.description }}</span>						
-					</div>
-				</div>				
-                {% endif %}
-                
-                <!-- Post Title -->
-				<h1 class="posttitle">{{ page.title }}</h1> 
-                
-			</div>
-
-			<!-- Post Featured Image -->
-			{% if page.image %}<img class="featured-image img-fluid" src="{{ site.baseurl }}/{{ page.image }}" alt="{{ page.title }}">{% endif %}
-			<!-- End Featured Image -->
-
-			<!-- Post Content -->
-			<div class="article-post">
-				{{content}}
-			</div>
-
-            <!-- Post Date -->
-            <p>
-            <small>
-                <span class="post-date"><time class="post-date" datetime="{{ page.date | date:"%Y-%m-%d" }}">{{ page.date | date_to_string }}</time></span>           
-                {% if page.last_modified_at %}
-                (Updated: <time datetime="{{ page.last_modified_at | date_to_xmlschema }}" itemprop="dateModified">{{ page.last_modified_at | date: "%b %-d, %Y" }}</time>)
-                {% endif %}
-                </small>
-            </p>
-            
-			<!-- Post Categories -->
-			<div class="after-post-tags">
-				<ul class="tags">
-                    {% assign sortedCategories = page.categories | sort %}
-                    {% for category in sortedCategories %}
-                    <li>
-                     <a href="{{ site.baseurl }}/category/{{ category | slugify }}/">{{ category }}</a>
-                    </li>
-                    {% endfor %}
-				</ul>
-			</div>
-			<!-- End Categories -->
-            
-            <!-- Prev/Next -->
-            <div class="row PageNavigation d-flex justify-content-between font-weight-bold">
-            {% if page.previous.url %}
-            <a class="prev d-block col-md-6" href="{{page.previous.url | absolute_url}}"> &laquo; {{page.previous.title}}</a>
-            {% endif %}
-            {% if page.next.url %}
-            <a class="next d-block col-md-6 text-lg-right" href="{{page.next.url | absolute_url}}">{{page.next.title}} &raquo; </a>
-            {% endif %}
-            <div class="clearfix"></div>
-            </div>
-            <!-- End Categories -->
-
-		</div>
-		<!-- End Post -->
-
-	</div>
+  <!-- 文章内容 -->
+  {{ page.content }}
+  <!-- 引入share模块 -->
+  {% include share.html %}
 </div>
-<!-- End Article
-================================================== -->
 
-  
+<!-- 底部锚点 -->
+<a id="htmldown" name="htmldown"></a>
+<!-- 引入评论模块 -->
+{% include comment.html %}
+<!-- 引入goto模块 -->
+{% include goto.html %}
+<!-- 引入页面底部模块 -->
+{% include footer.html %}
 
-<!-- Begin Comments
-================================================== -->
-{% if page.comments != false %}
-    <div class="container">
-        <div id="comments" class="row justify-content-center mb-5">
-            <div class="col-md-8">              
-                {% include disqus.html %}                
-            </div>
-        </div>
-    </div>
-{% endif %}
-<!--End Comments
-================================================== -->
+<!-- 引用wow.js的动画效果 -->
+<script src="/assets/js/wow.js"></script>
+<script>
+    var wow = new WOW({
+        boxClass: 'wow',
+        animateClass: 'animated',
+        // offset: 600,
+        mobile: true,
+        live: true
+    });
+    wow.init();
+</script>
+<!-- 页面刷新回到顶部 -->
+<script>
+    window.onbeforeunload = function(){
+        //刷新后页面自动回到顶部
+        document.documentElement.scrollTop = 0;  //ie下
+        document.body.scrollTop = 0;  //非ie
+    }
+</script>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

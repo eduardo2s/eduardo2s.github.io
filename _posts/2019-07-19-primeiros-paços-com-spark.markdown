@@ -1,11 +1,11 @@
 ---
 layout: post
-title:  "Primeiros Paços com Spark!"
+title:  "Primeiros Passos com Spark!"
 date:   2019-07-19 09:17:00 +0800
 tags: spark pyspark tutorial iniciante
 color: rgb(255, 93, 21)
 cover: '../assets/spark.png'
-subtitle: 'Primeiros Paços com Spark!'
+subtitle: 'Primeiros Passos com Spark!'
 ---
 Hoje irei falar e demonstra um pouco a respeito do Spark, usando pyspark para analise de dados!
 
@@ -17,7 +17,7 @@ Bom precisamos entender melhor o que é o Spark, antes de entrarmos na fase mais
 - Oferece processamento de fluxo em tempo real, processamento interativo, processamento de gráficos, processamento na memória, bem como processamento em lote, com velocidade muito rápida, facilidade de uso e padrão de interface.
 - Existem alguns componentes que fazem parte do Apache Spark, sendo eles: Spark Core, Spark SQL, Spark Streaming, Spark MLlib, Spark GraphX, SparkR
 
-![](..\assets\sparkecosystem.jpg)
+![sparkecosystem](https://eduardo2s.github.io/assets/sparkecosystem.jpg)
 
 Dentro do ecosistema do Spark, temos os chamados RDDs (Resilient Distributed Dataset), que é considerada a unidade fundamental de dados dentro do Spark, é uma coleção distribuída de elementos nos nós do cluster(hadoop). Também executa operações paralelas. Além disso, os Spark RDDs são imutáveis por natureza. Embora possa se gerar um novo RDD transformando um Spark RDD existente.
 
@@ -44,12 +44,12 @@ Bom, provavelmente você está se perguntando, como iremos utilizar o Spark, já
 1. Vá até ao Databircks (https://databricks.com/try-databricks)
 2. Faça o cadastro na Edição da Comunidade.
 
-![](..\assets\databricks.jpg)
+![databricks](https://eduardo2s.github.io/assets/databricks.jpg)
 
 3. É importante se lembrar que após o cadastro, quando for efetuar o **Login**, clicar na parte inferior onde diz algo do tipo "**Login para cadastro da edição de comunidade**"	
 4. Assim que entrar no painel do Databricks, você terá acesso a inúmeras opções, para iniciar seu notebook de analises basta clicar em "New Notebook"
 
-![](..\assets\novonotebook.jpg)
+![databricksnotebook](https://eduardo2s.github.io/assets/novonotebook.jpg)
 
 5. Caso esteja acostumado com Python, o que irá ver é uma especie de Jupyter Notebook, o funcionamento é o mesmo, é possível utilizar o Spark com diferentes linguagens, aqui iremos utilizar o **pySpark**, ou seja o código remete aquilo que já estamos acostumados ao programar em Pythons.
 6. Iremos utilizar para esse trabalho um dataset do Kaggle, que pode ser baixado aqui: https://www.kaggle.com/carrie1/ecommerce-data para fazer o uso, é interessante subir o arquivo CSV em algum link, como o dropbox por exemplo =)

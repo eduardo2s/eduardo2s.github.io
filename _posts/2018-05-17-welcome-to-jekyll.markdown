@@ -1,11 +1,11 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
-date:   2018-05-17 14:05:21 +0800
-tags: jekyll update
-color: rgb(255,90,90)
-cover: '../assets/test.png'
-subtitle: 'Welcome to Jekyll!'
+title:  "Primeiros Paços com Spark!"
+date:   2019-07-19 09:17:00 +0800
+tags: spark pyspark tutorial iniciante
+color: rgb(255, 93, 21)
+cover: '../assets/spark.png'
+subtitle: 'Primeiros Paços com Spark!'
 ---
 You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
 

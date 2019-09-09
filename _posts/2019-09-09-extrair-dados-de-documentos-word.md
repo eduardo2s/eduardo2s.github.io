@@ -4,7 +4,7 @@ title: Extrair informações de uma tabela em um documento .DOCx
 date: 2019-09-09 11:08:00 +0800
 description: Extrair informações de uma tabela em um documento .DOCx # Add post description (optional)
 img: word.jpg # Add image post (optional)
-tags: [python, pandas, word, docx # add tag
+tags: [python, pandas, word, docx] # add tag
 ---
 Nesse post irei demonstrar como extrair informações de uma tabela dentro de um documento .docx
 

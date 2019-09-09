@@ -56,7 +56,7 @@ for infile in tqdm(glob.glob(os.path.join(path, '*.docx') ), desc="processando d
             listateste.append(table.Cell(Row = data[0], Column = 3).Range.Text.rstrip('\r\x07'))
             listateste.append(table.Cell(Row = data[0], Column = 4).Range.Text.rstrip('\r\x07'))
             listateste.append(table.Cell(Row = data[1], Column = 1).Range.Text.rstrip('\r\x07'))
-		final_list.append(listateste)
+        final_list.append(listateste)
     doc.Close(False)
 word.Quit()s
   {% endhighlight %}
